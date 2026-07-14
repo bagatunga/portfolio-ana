@@ -1,0 +1,112 @@
+<header class="navbar">
+  <div class="navbar-background" aria-hidden="true"></div>
+
+  <div class="navbar-content">
+    <a class="navbar-logo" routerLink="/" aria-label="Ir al inicio" (click)="closeMenu()">
+      <span class="navbar-logo-icon" aria-hidden="true">
+        <svg viewBox="0 0 48 48" role="presentation">
+          <path
+            class="logo-stem"
+            d="
+              M 24 43
+              C 24 32, 24 19, 24 6
+            "
+          />
+
+          <path
+            class="logo-leaf"
+            d="
+              M 24 18
+              C 15 18, 10 13, 9 7
+              C 16 7, 22 11, 24 18
+              Z
+            "
+          />
+
+          <path
+            class="logo-leaf"
+            d="
+              M 24 27
+              C 33 27, 38 22, 39 15
+              C 32 15, 26 19, 24 27
+              Z
+            "
+          />
+
+          <path
+            class="logo-leaf"
+            d="
+              M 24 35
+              C 17 35, 12 31, 10 26
+              C 17 25, 22 29, 24 35
+              Z
+            "
+          />
+        </svg>
+      </span>
+
+      <span class="navbar-logo-text">
+        <span class="navbar-name">Ana Ruiz</span>
+        <span class="navbar-profession">Desarrolladora web</span>
+      </span>
+    </a>
+
+    <button
+      class="navbar-toggle"
+      type="button"
+      aria-label="Abrir o cerrar menú"
+      aria-controls="main-menu"
+      [attr.aria-expanded]="isMenuOpen()"
+      [class.navbar-toggle-open]="isMenuOpen()"
+      (click)="toggleMenu()"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav
+      id="main-menu"
+      class="navbar-menu"
+      aria-label="Navegación principal"
+      [class.navbar-menu-open]="isMenuOpen()"
+    >
+      <a
+        class="navbar-link"
+        routerLink="/"
+        routerLinkActive="navbar-link-active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        (click)="closeMenu()"
+      >
+        Inicio
+      </a>
+
+      <a
+        class="navbar-link"
+        routerLink="/sobre-mi"
+        routerLinkActive="navbar-link-active"
+        (click)="closeMenu()"
+      >
+        Sobre mí
+      </a>
+
+      <a
+        class="navbar-link"
+        routerLink="/proyectos"
+        routerLinkActive="navbar-link-active"
+        (click)="closeMenu()"
+      >
+        Proyectos
+      </a>
+
+      <a
+        class="navbar-link"
+        routerLink="/contacto"
+        routerLinkActive="navbar-link-active"
+        (click)="closeMenu()"
+      >
+        Contacto
+      </a>
+    </nav>
+  </div>
+</header>
