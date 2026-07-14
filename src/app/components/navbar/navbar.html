@@ -1,17 +1,348 @@
-<nav>
-    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-        Inicio
-    </a>
+<header class="site-header">
+    <div class="site-header__background" aria-hidden="true"></div>
 
-    <a routerLink="/sobre-mi" routerLinkActive="active">
-        Sobre mí
-    </a>
+    <div class="site-header__vine" aria-hidden="true">
+        <svg viewBox="0 0 1600 84" preserveAspectRatio="xMidYMid meet" role="presentation">
+            <!--
+        Definimos la forma de la hoja una sola vez.
+        Después la reutilizamos con <use>.
+      -->
+            <defs>
+                <path id="vine-leaf-shape" d="
+            M 0 0
+            C 6 -11, 17 -18, 28 -17
+            C 24 -7, 14 -1, 0 0
+            Z
+          " />
 
-    <a routerLink="/proyectos" routerLinkActive="active">
-        Proyectos
-    </a>
+                <path id="vine-leaf-vein" d="
+            M 2 -1
+            C 10 -7, 18 -12, 25 -15
+          " />
+            </defs>
 
-    <a routerLink="/contacto" routerLinkActive="active">
-        Contacto
-    </a>
-</nav>
+            <!-- Tallo principal -->
+
+            <path class="vine__stem" d="
+          M -30 63
+          C 120 45, 245 70, 390 57
+          S 655 43, 815 59
+          S 1080 71, 1245 52
+          S 1480 40, 1630 59
+        " />
+
+            <!-- ================================================= -->
+            <!-- RAMA 1 -->
+            <!-- ================================================= -->
+
+            <path class="vine__branch" d="
+          M 205 60
+          C 187 54, 170 43, 160 24
+        " />
+
+            <!-- Hoja superior -->
+
+            <g class="vine__leaf" transform="
+          translate(160 25)
+          rotate(-48)
+          scale(0.95)
+        ">
+                <use href="#vine-leaf-shape" class="vine__leaf-shape" />
+
+                <use href="#vine-leaf-vein" class="vine__leaf-vein" />
+            </g>
+
+            <!-- Hoja intermedia -->
+
+            <g class="vine__leaf" transform="
+          translate(170 39)
+          rotate(34)
+          scale(-0.82 0.82)
+        ">
+                <use href="#vine-leaf-shape" class="vine__leaf-shape" />
+
+                <use href="#vine-leaf-vein" class="vine__leaf-vein" />
+            </g>
+
+            <!-- Hoja inferior -->
+
+            <g class="vine__leaf" transform="
+          translate(188 52)
+          rotate(-25)
+          scale(0.72)
+        ">
+                <use href="#vine-leaf-shape" class="vine__leaf-shape" />
+
+                <use href="#vine-leaf-vein" class="vine__leaf-vein" />
+            </g>
+
+            <!-- ================================================= -->
+            <!-- RAMA 2 -->
+            <!-- ================================================= -->
+
+            <path class="vine__branch" d="
+          M 470 55
+          C 449 49, 437 35, 445 18
+        " />
+
+            <!-- Hoja superior -->
+
+            <g class="vine__leaf" transform="
+          translate(445 19)
+          rotate(-54)
+          scale(0.9)
+        ">
+                <use href="#vine-leaf-shape" class="vine__leaf-shape" />
+
+                <use href="#vine-leaf-vein" class="vine__leaf-vein" />
+            </g>
+
+            <!-- Hoja intermedia -->
+
+            <g class="vine__leaf" transform="
+          translate(443 33)
+          rotate(25)
+          scale(-0.78 0.78)
+        ">
+                <use href="#vine-leaf-shape" class="vine__leaf-shape" />
+
+                <use href="#vine-leaf-vein" class="vine__leaf-vein" />
+            </g>
+
+            <!-- Hoja inferior -->
+
+            <g class="vine__leaf" transform="
+          translate(458 47)
+          rotate(-22)
+          scale(0.7)
+        ">
+                <use href="#vine-leaf-shape" class="vine__leaf-shape" />
+
+                <use href="#vine-leaf-vein" class="vine__leaf-vein" />
+            </g>
+
+            <!-- ================================================= -->
+            <!-- RAMA 3 -->
+            <!-- ================================================= -->
+
+            <path class="vine__branch" d="
+          M 760 54
+          C 777 44, 783 32, 778 18
+        " />
+
+            <!-- Hoja superior -->
+
+            <g class="vine__leaf" transform="
+          translate(778 19)
+          rotate(-38)
+          scale(0.92)
+        ">
+                <use href="#vine-leaf-shape" class="vine__leaf-shape" />
+
+                <use href="#vine-leaf-vein" class="vine__leaf-vein" />
+            </g>
+
+            <!-- Hoja intermedia -->
+
+            <g class="vine__leaf" transform="
+          translate(779 33)
+          rotate(34)
+          scale(-0.8 0.8)
+        ">
+                <use href="#vine-leaf-shape" class="vine__leaf-shape" />
+
+                <use href="#vine-leaf-vein" class="vine__leaf-vein" />
+            </g>
+
+            <!-- Hoja inferior -->
+
+            <g class="vine__leaf" transform="
+          translate(768 46)
+          rotate(-20)
+          scale(0.7)
+        ">
+                <use href="#vine-leaf-shape" class="vine__leaf-shape" />
+
+                <use href="#vine-leaf-vein" class="vine__leaf-vein" />
+            </g>
+
+            <!-- ================================================= -->
+            <!-- RAMA 4 -->
+            <!-- ================================================= -->
+
+            <path class="vine__branch" d="
+          M 1040 62
+          C 1022 53, 1014 39, 1025 22
+        " />
+
+            <!-- Hoja superior -->
+
+            <g class="vine__leaf" transform="
+          translate(1025 23)
+          rotate(-52)
+          scale(0.9)
+        ">
+                <use href="#vine-leaf-shape" class="vine__leaf-shape" />
+
+                <use href="#vine-leaf-vein" class="vine__leaf-vein" />
+            </g>
+
+            <!-- Hoja intermedia -->
+
+            <g class="vine__leaf" transform="
+          translate(1019 38)
+          rotate(27)
+          scale(-0.78 0.78)
+        ">
+                <use href="#vine-leaf-shape" class="vine__leaf-shape" />
+
+                <use href="#vine-leaf-vein" class="vine__leaf-vein" />
+            </g>
+
+            <!-- Hoja inferior -->
+
+            <g class="vine__leaf" transform="
+          translate(1031 52)
+          rotate(-24)
+          scale(0.7)
+        ">
+                <use href="#vine-leaf-shape" class="vine__leaf-shape" />
+
+                <use href="#vine-leaf-vein" class="vine__leaf-vein" />
+            </g>
+
+            <!-- ================================================= -->
+            <!-- RAMA 5 -->
+            <!-- ================================================= -->
+
+            <path class="vine__branch" d="
+          M 1290 48
+          C 1274 39, 1268 28, 1277 16
+        " />
+
+            <!-- Hoja superior -->
+
+            <g class="vine__leaf" transform="
+          translate(1277 17)
+          rotate(-45)
+          scale(0.92)
+        ">
+                <use href="#vine-leaf-shape" class="vine__leaf-shape" />
+
+                <use href="#vine-leaf-vein" class="vine__leaf-vein" />
+            </g>
+
+            <!-- Hoja intermedia -->
+
+            <g class="vine__leaf" transform="
+          translate(1273 30)
+          rotate(31)
+          scale(-0.81 0.81)
+        ">
+                <use href="#vine-leaf-shape" class="vine__leaf-shape" />
+
+                <use href="#vine-leaf-vein" class="vine__leaf-vein" />
+            </g>
+
+            <!-- Hoja inferior -->
+
+            <g class="vine__leaf" transform="
+          translate(1282 41)
+          rotate(-22)
+          scale(0.7)
+        ">
+                <use href="#vine-leaf-shape" class="vine__leaf-shape" />
+
+                <use href="#vine-leaf-vein" class="vine__leaf-vein" />
+            </g>
+
+            <!-- Detalles dorados -->
+
+            <g class="vine__details">
+                <circle cx="390" cy="57" r="3" />
+
+                <circle cx="665" cy="53" r="3" />
+
+                <circle cx="815" cy="59" r="3" />
+
+                <circle cx="1245" cy="52" r="3" />
+
+                <circle cx="1450" cy="47" r="3" />
+            </g>
+        </svg>
+    </div>
+
+    <!-- Contenido principal del navbar -->
+
+    <div class="container site-header__inner">
+        <a class="brand" routerLink="/" aria-label="Ir al inicio" (click)="closeMenu()">
+            <span class="brand__mark" aria-hidden="true">
+                <svg viewBox="0 0 48 48">
+                    <path class="brand__stem" d="
+              M 24 42
+              C 24 30, 24 18, 24 7
+            " />
+
+                    <path class="brand__leaf" d="
+              M 24 18
+              C 15 18, 10 13, 9 7
+              C 16 7, 22 11, 24 18
+              Z
+            " />
+
+                    <path class="brand__leaf" d="
+              M 24 27
+              C 33 27, 38 22, 39 15
+              C 32 15, 26 19, 24 27
+              Z
+            " />
+
+                    <path class="brand__leaf" d="
+              M 24 35
+              C 17 35, 12 31, 10 26
+              C 17 25, 22 29, 24 35
+              Z
+            " />
+                </svg>
+            </span>
+
+            <span class="brand__text">
+                <strong>Ana Ruiz</strong>
+                <small>Desarrolladora web</small>
+            </span>
+        </a>
+
+        <button class="menu-toggle" type="button" aria-label="Abrir o cerrar menú" aria-controls="primary-navigation"
+            [attr.aria-expanded]="isMenuOpen()" [class.is-open]="isMenuOpen()" (click)="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav id="primary-navigation" class="site-nav" aria-label="Navegación principal"
+            [class.site-nav--open]="isMenuOpen()">
+            <a routerLink="/" routerLinkActive="is-active" [routerLinkActiveOptions]="{ exact: true }"
+                (click)="closeMenu()">
+                Inicio
+            </a>
+
+            <a routerLink="/sobre-mi" routerLinkActive="is-active" (click)="closeMenu()">
+                Sobre mí
+            </a>
+
+            <a routerLink="/proyectos" routerLinkActive="is-active" (click)="closeMenu()">
+                Proyectos
+            </a>
+
+            <a routerLink="/contacto" routerLinkActive="is-active" (click)="closeMenu()">
+                Contacto
+            </a>
+        </nav>
+
+        <span class="site-header__seal" aria-hidden="true">
+            <span class="site-header__seal-symbol">
+                ✦
+            </span>
+        </span>
+    </div>
+</header>

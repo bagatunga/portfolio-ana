@@ -1,0 +1,574 @@
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    isolation: isolate;
+
+    min-height: 104px;
+
+    border-bottom: 1px solid var(--color-border);
+
+    background: rgba(250, 247, 237, 0.92);
+
+    box-shadow: var(--shadow-soft);
+
+    backdrop-filter: blur(16px);
+}
+
+.site-header__background {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+    &::before {
+        content: "";
+
+        position: absolute;
+        inset: 0;
+
+        background:
+            radial-gradient(circle at 15% 10%,
+                rgba(167, 185, 157, 0.3),
+                transparent 30%),
+            radial-gradient(circle at 86% 100%,
+                rgba(213, 191, 139, 0.2),
+                transparent 32%),
+            linear-gradient(90deg,
+                rgba(255, 255, 255, 0.5),
+                rgba(245, 240, 227, 0.75));
+    }
+
+    &::after {
+        content: "";
+
+        position: absolute;
+        inset: 0;
+
+        opacity: 0.2;
+
+        background-image:
+            linear-gradient(90deg,
+                transparent 0,
+                rgba(55, 86, 59, 0.08) 50%,
+                transparent 100%);
+
+        background-size: 320px 100%;
+    }
+}
+
+.site-header__inner {
+    position: relative;
+    z-index: 3;
+
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    align-items: center;
+
+    min-height: 104px;
+
+    gap: clamp(1rem, 3vw, 3rem);
+}
+
+/* Marca */
+
+.brand {
+    display: inline-flex;
+    align-items: center;
+
+    min-width: max-content;
+
+    gap: 0.85rem;
+
+    color: var(--forest-900);
+
+    &:hover {
+        .brand__mark {
+            transform: rotate(-4deg) scale(1.04);
+
+            box-shadow:
+                0 8px 24px rgba(53, 91, 64, 0.15),
+                inset 0 0 0 1px rgba(255, 255, 255, 0.7);
+        }
+
+        .brand__leaf {
+            fill: var(--forest-700);
+        }
+    }
+}
+
+.brand__mark {
+    display: grid;
+    place-items: center;
+
+    width: 48px;
+    height: 48px;
+
+    border: 1px solid rgba(63, 104, 73, 0.24);
+    border-radius: 50%;
+
+    background:
+        radial-gradient(circle at 35% 30%,
+            var(--cream-50),
+            var(--sage-100));
+
+    box-shadow:
+        0 5px 16px rgba(53, 91, 64, 0.1),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.55);
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+
+    svg {
+        width: 29px;
+        height: 29px;
+    }
+}
+
+.brand__stem {
+    fill: none;
+
+    stroke: var(--gold-500);
+    stroke-width: 2;
+    stroke-linecap: round;
+}
+
+.brand__leaf {
+    fill: var(--forest-500);
+
+    transition: fill 0.3s ease;
+}
+
+.brand__text {
+    display: grid;
+
+    gap: 0.1rem;
+
+    strong {
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(1.15rem, 2vw, 1.4rem);
+        font-weight: 500;
+        letter-spacing: 0.055em;
+    }
+
+    small {
+        color: var(--color-text-muted);
+
+        font-size: 0.7rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+    }
+}
+
+/* Navegación */
+
+.site-nav {
+    display: flex;
+    align-items: center;
+    justify-self: center;
+
+    gap: 0.25rem;
+
+    padding: 0.42rem;
+
+    border: 1px solid rgba(63, 104, 73, 0.16);
+    border-radius: 999px;
+
+    background: rgba(253, 251, 245, 0.72);
+
+    box-shadow:
+        0 8px 26px rgba(40, 66, 44, 0.06),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.72);
+
+    a {
+        position: relative;
+
+        min-width: 92px;
+
+        padding: 0.75rem 1rem;
+
+        border-radius: 999px;
+
+        color: #566157;
+
+        font-size: 0.92rem;
+        font-weight: 500;
+        text-align: center;
+        white-space: nowrap;
+
+        transition:
+            color 0.3s ease,
+            background-color 0.3s ease,
+            box-shadow 0.3s ease,
+            transform 0.3s ease;
+
+        &::before {
+            content: "";
+
+            position: absolute;
+            top: -0.35rem;
+            left: 50%;
+
+            width: 5px;
+            height: 11px;
+
+            border-radius: 90% 10% 90% 10%;
+
+            background: var(--forest-500);
+
+            opacity: 0;
+
+            transform:
+                translate(-50%, 5px) rotate(38deg) scale(0.5);
+
+            transition:
+                opacity 0.3s ease,
+                transform 0.3s ease;
+        }
+
+        &:hover {
+            color: var(--forest-900);
+
+            background: rgba(220, 230, 214, 0.52);
+
+            transform: translateY(-1px);
+        }
+
+        &.is-active {
+            color: var(--forest-950);
+
+            background:
+                linear-gradient(135deg,
+                    rgba(255, 255, 255, 0.95),
+                    rgba(220, 230, 214, 0.75));
+
+            box-shadow:
+                0 5px 16px rgba(41, 72, 50, 0.1),
+                inset 0 0 0 1px rgba(63, 104, 73, 0.1);
+
+            &::before {
+                opacity: 1;
+
+                transform:
+                    translate(-50%, 0) rotate(38deg) scale(1);
+            }
+        }
+    }
+}
+
+/* Medallón */
+
+.site-header__seal {
+    position: relative;
+
+    display: grid;
+    place-items: center;
+
+    width: 43px;
+    height: 43px;
+
+    border: 1px solid rgba(166, 132, 77, 0.38);
+    border-radius: 50%;
+
+    background:
+        radial-gradient(circle,
+            rgba(255, 255, 255, 0.8),
+            rgba(233, 224, 204, 0.5));
+
+    color: var(--gold-500);
+
+    box-shadow:
+        0 5px 18px rgba(109, 88, 48, 0.08),
+        inset 0 0 0 4px rgba(255, 255, 255, 0.42);
+
+    &::before {
+        content: "";
+
+        position: absolute;
+
+        width: 31px;
+        height: 31px;
+
+        border: 1px dashed rgba(166, 132, 77, 0.4);
+        border-radius: 50%;
+
+        animation: rotate-seal 18s linear infinite;
+    }
+}
+
+.site-header__seal-symbol {
+    position: relative;
+    z-index: 1;
+
+    font-size: 0.9rem;
+}
+
+/* Enredadera */
+
+.site-header__vine {
+    position: absolute;
+    right: 0;
+    bottom: -8px;
+    left: 0;
+    z-index: 1;
+
+    height: 58px;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+    opacity: 0.9;
+
+    svg {
+        display: block;
+
+        width: 100%;
+        height: 100%;
+
+        overflow: visible;
+    }
+}
+
+/* Tallo y ramas */
+
+.vine__stem,
+.vine__branch {
+    fill: none;
+
+    stroke: var(--forest-500);
+    stroke-linecap: round;
+    stroke-linejoin: round;
+
+    vector-effect: non-scaling-stroke;
+
+    animation: none;
+}
+
+.vine__stem {
+    stroke-width: 2.4;
+}
+
+.vine__branch {
+    stroke-width: 1.9;
+
+    opacity: 0.95;
+}
+
+/* Hojas */
+
+.vine__leaf {
+    opacity: 1;
+
+    animation: none;
+}
+
+.vine__leaf-shape {
+    fill: var(--forest-700);
+
+    stroke: var(--forest-900);
+    stroke-width: 1;
+    stroke-linejoin: round;
+
+    vector-effect: non-scaling-stroke;
+}
+
+.vine__leaf-vein {
+    fill: none;
+
+    stroke: rgba(245, 240, 227, 0.9);
+    stroke-width: 0.9;
+    stroke-linecap: round;
+
+    vector-effect: non-scaling-stroke;
+}
+
+/* Puntos dorados */
+
+.vine__details {
+    fill: var(--gold-500);
+
+    opacity: 1;
+
+    animation: none;
+}
+
+/* Botón del menú móvil */
+
+.menu-toggle {
+    position: relative;
+
+    display: none;
+    place-items: center;
+
+    width: 44px;
+    height: 44px;
+
+    padding: 0;
+
+    border: 1px solid rgba(63, 104, 73, 0.22);
+    border-radius: 50%;
+
+    background: rgba(253, 251, 245, 0.78);
+
+    cursor: pointer;
+
+    span {
+        position: absolute;
+
+        width: 19px;
+        height: 1.5px;
+
+        border-radius: 99px;
+
+        background: var(--forest-900);
+
+        transition:
+            transform 0.3s ease,
+            opacity 0.3s ease;
+
+        &:nth-child(1) {
+            transform: translateY(-6px);
+        }
+
+        &:nth-child(3) {
+            transform: translateY(6px);
+        }
+    }
+
+    &.is-open {
+        span:nth-child(1) {
+            transform: rotate(45deg);
+        }
+
+        span:nth-child(2) {
+            opacity: 0;
+        }
+
+        span:nth-child(3) {
+            transform: rotate(-45deg);
+        }
+    }
+}
+
+/* Animación del medallón */
+
+@keyframes rotate-seal {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Responsive */
+
+@media (max-width: 900px) {
+    .site-header {
+        min-height: 86px;
+    }
+
+    .site-header__inner {
+        grid-template-columns: 1fr auto;
+
+        min-height: 86px;
+    }
+
+    .brand__text small {
+        display: none;
+    }
+
+    .site-header__seal {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: grid;
+        justify-self: end;
+    }
+
+    .site-nav {
+        position: absolute;
+        top: calc(100% + 0.75rem);
+        right: 0;
+        left: 0;
+
+        display: grid;
+
+        gap: 0.3rem;
+
+        padding: 0.7rem;
+
+        border-radius: var(--border-radius-md);
+
+        background: rgba(250, 247, 237, 0.98);
+
+        box-shadow:
+            0 22px 50px rgba(30, 51, 35, 0.16),
+            inset 0 0 0 1px rgba(255, 255, 255, 0.7);
+
+        opacity: 0;
+        visibility: hidden;
+
+        transform: translateY(-12px) scale(0.98);
+        transform-origin: top;
+
+        transition:
+            opacity 0.25s ease,
+            visibility 0.25s ease,
+            transform 0.25s ease;
+
+        a {
+            width: 100%;
+        }
+    }
+
+    .site-nav--open {
+        opacity: 1;
+        visibility: visible;
+
+        transform: translateY(0) scale(1);
+    }
+
+    .site-header__vine {
+        bottom: -10px;
+
+        height: 48px;
+
+        opacity: 0.82;
+    }
+}
+
+@media (max-width: 480px) {
+    .brand__mark {
+        width: 42px;
+        height: 42px;
+    }
+
+    .brand__text strong {
+        font-size: 1.05rem;
+    }
+
+    .site-header__vine {
+        height: 42px;
+
+        opacity: 0.72;
+    }
+}
+
+/* Accesibilidad */
+
+@media (prefers-reduced-motion: reduce) {
+    .site-header__seal::before {
+        animation: none;
+    }
+
+    .site-nav,
+    .site-nav a,
+    .brand__mark,
+    .menu-toggle span {
+        transition: none;
+    }
+}
