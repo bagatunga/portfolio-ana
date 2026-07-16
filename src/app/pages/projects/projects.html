@@ -1,1 +1,20 @@
-<p>projects works!</p>
+<section class="projects-page">
+  <div class="projects-page-content">
+    <header class="projects-page-header">
+      <span class="projects-page-label"> Cuaderno de proyectos </span>
+
+      <h1>Proyectos destacados</h1>
+
+      <p>
+        Una selección de proyectos desarrollados durante mi formación y evolución como
+        desarrolladora web.
+      </p>
+    </header>
+
+    <div class="projects-grid">
+      @for (project of projects; track project.slug) {
+        <app-project-card [project]="project" />
+      }
+    </div>
+  </div>
+</section>

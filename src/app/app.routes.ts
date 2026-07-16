@@ -9,17 +9,14 @@ export const routes: Routes = [
         path: '',
         component: Home,
     },
-
     {
         path: 'sobre-mi',
         component: About,
     },
-
     {
         path: 'proyectos',
         component: Projects,
     },
-
     {
         path: 'contacto',
         component: Contact,

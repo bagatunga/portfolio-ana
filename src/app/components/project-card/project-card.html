@@ -1,1 +1,70 @@
-<p>project-card works!</p>
+<article class="project-card">
+  <div class="project-card-media">
+    @if (project.imageUrl) {
+      <img [src]="project.imageUrl" [alt]="'Captura del proyecto ' + project.title" />
+    } @else {
+      <div class="project-card-placeholder">
+        <span>{{ project.category }}</span>
+      </div>
+    }
+  </div>
+
+  <div class="project-card-content">
+    <div class="project-card-header">
+      <span class="project-card-category">
+        {{ project.category }}
+      </span>
+
+      @if (project.featured) {
+        <span class="project-card-featured"> Destacado </span>
+      }
+    </div>
+
+    <h2>
+      {{ project.title }}
+    </h2>
+
+    <p>
+      {{ project.summary }}
+    </p>
+
+    <div class="project-card-techs" aria-label="Tecnologías utilizadas">
+      @for (technology of project.technologies; track technology) {
+        <span>
+          {{ technology }}
+        </span>
+      }
+    </div>
+
+    <div class="project-card-actions">
+      <a
+        class="project-card-link project-card-link-primary"
+        [routerLink]="['/proyectos', project.slug]"
+      >
+        Ver ficha
+      </a>
+
+      @if (project.demoUrl) {
+        <a
+          class="project-card-link project-card-link-secondary"
+          [href]="project.demoUrl"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Ver demo
+        </a>
+      }
+
+      @if (project.repositoryUrl) {
+        <a
+          class="project-card-link project-card-link-secondary"
+          [href]="project.repositoryUrl"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          GitHub
+        </a>
+      }
+    </div>
+  </div>
+</article>
